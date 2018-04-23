@@ -8,6 +8,7 @@ gulp.task("default",function(){
         host:"localhost",
         livereload:true,
         middleware:function(req,res,next){
+            if()
             next();
         }
     }))

@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a,u{
+    text-decoration:none;
+    color:#000;
+}
+i,em{
+    font-style:normal;
+}
+b{
+    font-weight:normal;
+}
+.box{
+     width: 100%;
+     height:100%;
+     background:skyblue;
+}
+.nei{
+    margin-left:30px;
+}
+.charge{
+    margin-left:30px;
+}
+.mail{
+    margin-left:30px;
+}
+.smail{
+    margin-left:30px;
+}
