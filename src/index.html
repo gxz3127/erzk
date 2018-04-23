@@ -8,7 +8,47 @@
     <title>Document</title>
 </head>
 <body> 
-
+    <script src="./js/handlebars.js"></script>
+    <script src="./js/jquery-2.1.1.min.js"></script> 
+    <script id="entry-template" type="text/x-hardlebars-template">
+                    {{name}}
+                    <div class="nei">
+                        <b>{{this.name}}</b>
+                        {{each this.children}}
+                            <div class="charge">
+                                <i>{{this.name}}</i> 
+                                {{each this.name}}
+                                    <div class="mail">
+                                            <em>{{this.name}}</em>
+                                            {{each this.name}}
+                                                <span>{{this.name}}</span>
+                                            {{/each}}
+                                </div> 
+                                {{/each}}
+                            </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+        </script>
+        <script> 
+                $(function(){
+                    $.ajax({
+                        url:"/list", 
+                        success:function(res){ 
+                            var data=JSON.parse(res)[0];
+                            console.log(data)  
+                            var source=$("#entry-template").html();
+                            var template=Handlebars.compile(source);
+                            var context=data; 
+                            var html=template(context);
+                            $(".box").html(html); 
+                        },
+                        error:function(error){
+                            console.warn(error)
+                        }
+                    })
+                }) 
+        </script> 
       <div class="box">
            我的电脑
              <div class="nei">
@@ -39,7 +79,7 @@
                      </div>
              </div> 
              <div class="nei">
-                    <b>-c</b> 
+                    <b>-d</b> 
                     <div class="charge">
                             <i>影音</i>
                             <div class="mail">
